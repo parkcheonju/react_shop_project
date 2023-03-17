@@ -2,16 +2,20 @@ import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./ProductPage.css";
+import {API_URL} from '../config/constants'
+
 const ProductPage = () => {
 	const navigate = useNavigate();
 	const { id } = useParams();
 	const [product, setProduct] = useState(null);
 	useEffect(() => {
-		let url = `https://89e06b7a-d7f6-4161-97d5-99bd1e2387e3.mock.pstmn.io/products/${id}`;
+		let url = `${API_URL}/products/${id}`;
+		//let url = `https://89e06b7a-d7f6-4161-97d5-99bd1e2387e3.mock.pstmn.io/products/${id}`;
 		axios
 			.get(url)
 			.then((result) => {
-				setProduct(result.data);
+				console.log(result);
+				setProduct(result.data.product);
 			})
 			.catch((error) => {
 				console.log(error);
@@ -39,8 +43,8 @@ const ProductPage = () => {
       <div className="content-box">
         <div id="name">{product.name}</div>
         <div id="price">{product.price}</div>
-        <div id="createAt">2023.03.10</div>
-        <div id="description">{product.desc}</div>
+        <div id="createAt">{product.createdAt}</div>
+        <div id="description">{product.description}</div>
       </div>
 		</div>
 	);
