@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Form, Input, Button, Upload, Divider, InputNumber } from "antd";
-import { API_URL } from "../config/constants";
 import "./UploadPage.css";
 import axios from "axios";
-
+import { API_URL } from "../config/constants";
 const { TextArea } = Input;
 const UploadPage = () => {
   const [imageUrl, setImageUrl] = useState(null);
@@ -40,7 +39,7 @@ const UploadPage = () => {
           {/* 모든것들은 form item 안에 있어야 한다. */}
           <Upload name="image" action="http://localhost:8080/image" listType="picture" showUploadList={false} onChange={onChangeImage}>
             {imageUrl ? (
-              <img id="upload-img" src={`http://localhost:8080/${imageUrl}`} alt="" />
+              <img id="upload-img" src={`${API_URL}/${imageUrl}`} alt="" />
             ) : (
               <div id="upload-img-placeholder">
                 <img src="/images/icons/camera.png" alt="" />
