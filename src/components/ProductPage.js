@@ -34,7 +34,7 @@ const ProductPage = () => {
         뒤로
       </button>
       <div id="image-box">
-        <img src={`/${product.imageUrl}`} alt={product.name} />
+        <img src={`${API_URL}/${product.imageUrl}`} alt={product.name} />
       </div>
       <div id="profile-box">
         <img src="/images/icons/avatar.png" alt={product.seller} />

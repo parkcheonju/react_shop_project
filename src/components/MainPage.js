@@ -9,13 +9,14 @@ dayjs.extend(relativeTime);
 const MainPage = () => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
-    // const url = "https://41299568-5ca1-4334-9625-de91e428a2c9.mock.pstmn.io/products/";
     const url = `${API_URL}/products`;
+    console.log(url);
     axios
       .get(url)
       .then((result) => {
         const products = result.data.product;
         setProducts(products);
+        console.log("data :", products);
       })
       .catch((error) => {
         console.log(error);
@@ -35,12 +36,11 @@ const MainPage = () => {
               <div className="product-card" key={idx}>
                 <Link className="product-link" to={`/productPage/${product.id}`}>
                   <div>
-                    <img className="product-img" src={product.imageUrl} alt={product.name} />
+                    <img className="product-img" src={`${API_URL}/${product.imageUrl}`} alt={product.name} onScroll={console.log(product)}/>
                   </div>
                   <div className="product-content">
                     <span className="product-name">{product.name}</span>
                     <span className="product-price">{product.price}</span>
-
                     <div className="product-footer">
                       <span className="product-seller">
                         <img src="images/icons/avatar.png" className="product-avatar" alt="{product.seller}" />

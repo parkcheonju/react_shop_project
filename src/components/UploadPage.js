@@ -1,11 +1,19 @@
 import React, { useEffect, useState } from "react";
-import { Form, Input, Button, Upload, Divider, InputNumber } from "antd";
+import { useNavigate } from "react-router-dom";
+import { Form, Input, Button, Upload, Divider, InputNumber,message } from "antd";
 import "./UploadPage.css";
 import axios from "axios";
 import { API_URL } from "../config/constants";
 const { TextArea } = Input;
 const UploadPage = () => {
   const [imageUrl, setImageUrl] = useState(null);
+
+  const [messageApi, contextHolder] = message.useMessage();
+  const info = () => {
+    messageApi.info('Hello, Ant Design!')
+  };
+
+  const navigate=useNavigate();
   const onFinish = (val) => {
     console.log(val);
     axios
@@ -15,12 +23,17 @@ const UploadPage = () => {
         name: val.name,
         price: val.price,
         description: val.description,
+        imageUrl: imageUrl,
       })
       .then((result) => {
         console.log(result);
+
+        //navigate('/',{replace:true});
+
       })
       .catch((err) => {
         console.log(err);
+        message.error(`에러가 발생했어요!`)
       });
   };
   const onChangeImage = function (info) {
@@ -66,7 +79,8 @@ const UploadPage = () => {
         </Form.Item>
         <Divider></Divider>
         <Form.Item>
-          <Button id="submit-button" htmlType="submit">
+          {contextHolder}
+          <Button id="submit-button" htmlType="submit" onClick={info}>
             상품등록하기
           </Button>
         </Form.Item>
