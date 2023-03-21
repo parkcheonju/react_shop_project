@@ -4,14 +4,14 @@ import axios from "axios";
 import "./ProductPage.css";
 // import relativeTime from "dayjs/plugin/relativeTime";
 import { API_URL } from "../config/constants";
+import { Button, message } from "antd";
 const ProductPage = () => {
   const navigate = useNavigate();
   const { id } = useParams();
   const [product, setProduct] = useState(null);
-  useEffect(() => {
-    const url = `${API_URL}/products/${id}`;
+  const getProduct = () => {
     axios
-      .get(url)
+      .get(`${API_URL}/products/${id}`)
       .then((result) => {
         console.log(result);
         setProduct(result.data.product);
@@ -19,10 +19,28 @@ const ProductPage = () => {
       .catch((error) => {
         console.log(error);
       });
+  };
+
+  useEffect(() => {
+    getProduct();
   }, []);
+
   if (product == null) {
     return <h1>상품정보를 받고 있습니다...</h1>;
   }
+
+  const onClickPurchase = () => {
+    axios
+      .post(`${API_URL}/purchase/${id}`)
+      .then((result) => {
+        message.info("결재가 완료 되었습니다.");
+        getProduct();
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+  
   return (
     <div>
       <button
@@ -44,7 +62,11 @@ const ProductPage = () => {
         <div id="name">{product.name}</div>
         <div id="price">{product.price}</div>
         <div id="createAt">{product.createAt}</div>
-        <div id="description">{product.description}</div>
+        <Button siz="large" type="primary" danger={true} className="payment" onClick={onClickPurchase}>
+          즉시결재하기
+        </Button>
+        {/* pre태그 미리 정의된 형식(preformatted)의 텍스트를 정의할 때 사용 */}
+        <pre id="description">{product.description}</pre>
       </div>
     </div>
   );

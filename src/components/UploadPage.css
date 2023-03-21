@@ -21,7 +21,8 @@
   font-size: 14px;
   color: rgb(195, 194, 204);
 }
-.upload-name {
+.upload-name,
+.upload-selle {
   width: 300px;
 }
 #product-description {

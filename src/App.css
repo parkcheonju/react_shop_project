@@ -62,8 +62,19 @@ a {
   margin-bottom: 12px;
   border: 1px solid rgba(230, 230, 230, 1);
   border-radius: 12px;
-
+  position: relative;
 }
+
+.product-blur{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ffffffaa;
+  pointer-events: 0 none;
+}
+
 .product-img {
   /*종횡비 맞춰주는 css코드*/
   object-fit: contain;
