@@ -62,7 +62,7 @@ const ProductPage = () => {
         <div id="name">{product.name}</div>
         <div id="price">{product.price}</div>
         <div id="createAt">{product.createAt}</div>
-        <Button siz="large" type="primary" danger={true} className="payment" onClick={onClickPurchase}>
+        <Button siz="large" type="primary" danger={true} className="payment" onClick={onClickPurchase} disabled={product.soldout === 1}>
           즉시결재하기
         </Button>
         {/* pre태그 미리 정의된 형식(preformatted)의 텍스트를 정의할 때 사용 */}
