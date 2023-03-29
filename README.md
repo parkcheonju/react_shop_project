@@ -1,70 +1,76 @@
-# Getting Started with Create React App
+# PERPET 프로젝트
+>> PWA 앱으로 제작한 풀스택 프로젝트 입니다.
+>> 프론트는 React를 사용하여 제작하였으며 NodeJS의 Express를 활용하여 백엔드 까지 구현한 풀스텍 프로젝트입니다
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 배포 URL [리액트앱(버셀 주소작성)][http://naver.com]
+## 백엔드 서비스 주소
+## 백엔드 깃허브
 
-## Available Scripts
+[![NPM Version][npm-image]][npm-url]
+[![Build Status][travis-image]][travis-url]
+[![Downloads Stats][npm-downloads]][npm-url]
 
-In the project directory, you can run:
+한 두 문단으로 프로젝트 소개 글을 작성합니다.
 
-### `npm start`
+![](https://user-images.githubusercontent.com/120350408/228405242-d70c2d76-3b77-436f-88d0-94cd60e87adb.jpg)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 설치 방법
+OS X & 리눅스:
 
-### `npm test`
+// 백틱 쓰고 설치방법에 npm install dependencies에 설치되어있는 내용을 넣어준다
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```sh
+npm install my-crazy-module --save
+```
+윈도우:
+```sh
+edit autoexec.bat
+```
+## 사용 예제
+스크린 샷과 코드 예제를 통해 사용 방법을 자세히 설명합니다.
+_더 많은 예제와 사용법은 [Wiki][wiki]를 참고하세요._
 
-### `npm run build`
+/============_더 많은 예제와 사용법은 [표시되는글자 뒤에는 링크 주소 새창 띄우기가 안되는 단점이 있음][http://naver.com]를 참고하세요._============/
+/============스크린 샷과<a href="http://naver.com" target="black"> 코드 예제를 통해 사용 방법을 자세히 설명합니다.============/
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 개발 환경 설정
+모든 개발 의존성 설치 방법과 자동 테스트 슈트 실행 방법을 운영체제 별로 작성합니다.
+```sh
+npm i react-router-dom 
+npm i axios 
 
-### `npm run eject`
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 구현목록
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+*MainPage(주 기능을 작성)
+  *상품메인페이지
+  *모든카테고리의 상품 리스팅
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+*UploadPage(주 기능을 작성)
+  *상품업로드페이지
+  *상품업로드기능 구현
 
-## Learn More
+## 구현 중 어려웠던점
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 정보
+이름 – [@트위터 주소](https://twitter.com/dbader_org) – 이메일주소@example.com
+XYZ 라이센스를 준수하며 `LICENSE`에서 자세한 정보를 확인할 수 있습니다.
+[https://github.com/yourname/github-link](https://github.com/dbader/)
+## 기여 방법
+1. (<https://github.com/yourname/yourproject/fork>)을 포크합니다.
+2. (`git checkout -b feature/fooBar`) 명령어로 새 브랜치를 만드세요.
+3. (`git commit -am 'Add some fooBar'`) 명령어로 커밋하세요.
+4. (`git push origin feature/fooBar`) 명령어로 브랜치에 푸시하세요.
+5. 풀리퀘스트를 보내주세요.
+<!-- Markdown link & img dfn's -->
+[npm-image]: https://img.shields.io/npm/v/datadog-metrics.svg?style=flat-square
+[npm-url]: https://npmjs.org/package/datadog-metrics
+[npm-downloads]: https://img.shields.io/npm/dm/datadog-metrics.svg?style=flat-square
+[travis-image]: https://img.shields.io/travis/dbader/node-datadog-metrics/master.svg?style=flat-square
+[travis-url]: https://travis-ci.org/dbader/node-datadog-metrics
+[wiki]: https://github.com/yourname/yourproject/wiki
